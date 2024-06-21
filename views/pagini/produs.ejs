@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../fragmente/head') %>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title><%= produs.nume %></title>
+  </head>
+  <body>
+    <%- include('../fragmente/header') %>
+    <main>
+      <div class="container">
+        <h1><%= produs.nume %></h1>
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="/public/<%= produs.imagine %>"
+              alt="<%= produs.nume %>"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>Pret: <%= produs.pret %></li>
+              <li>Specificație: <%= produs.specificatie_numerica %></li>
+              <li>
+                Data introducere:
+                <time datetime="<%= produs.data_introducere %>"
+                  ><%= new
+                  Date(produs.data_introducere).toLocaleDateString('ro-RO', {
+                  weekday: 'long', year: 'numeric', month: 'long', day:
+                  'numeric' }) %></time
+                >
+              </li>
+              <li>
+                Caracteristica string: <%= produs.caracteristica_string %>
+              </li>
+              <li>
+                Caracteristica multivaloare: <%=
+                produs.caracteristica_multivaloare %>
+              </li>
+              <li>
+                Caracteristica boolean: <%= produs.caracteristica_booleana ?
+                'Da' : 'Nu' %>
+              </li>
+            </ul>
+            <p><%= produs.descriere %></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('../fragmente/footer') %>
+    <script src="/public/js/script.js"></script>
+  </body>
+</html>

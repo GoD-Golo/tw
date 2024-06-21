@@ -1,0 +1,748 @@
+/* Resetare CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Dimensiuni unități fixe */
+}
+
+body {
+  font-family: "Arial", sans-serif; /* Font general */
+  line-height: 1.6;
+  font-size: 1rem; /* Unități relative */
+}
+
+/* CSS Variables for Colors */
+:root {
+  --color-primary: #4caf50;
+  --color-secondary: #2e7d32;
+  --color-highlight: #48ff00;
+  --link-color: #006400;
+  --link-visited-color: #8b0000;
+  --external-link-color: #ff4500;
+  --duotone-color1: #f06c64; /* Prima culoare pentru duotone */
+  --duotone-color2: #5b84b1; /* A doua culoare pentru duotone */
+  --gradient-color: #2111ff;
+}
+
+/* Layout Etapa 2 */
+body {
+  padding: 0 2rem;
+}
+
+header,
+footer,
+main,
+aside {
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "item1 item1 item1 item1"
+    "item8 item8 item8 item8"
+    "item3 item2 item2 item4"
+    "item5 item6 item7 item7"
+    "footer footer footer footer";
+  gap: 1rem;
+}
+
+.grid-item {
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item.item1 {
+  grid-area: item1;
+}
+
+.grid-item.item2 {
+  grid-area: item2;
+}
+
+.grid-item.item3 {
+  grid-area: item3;
+}
+
+.grid-item.item4 {
+  grid-area: item4;
+}
+
+.grid-item.item5 {
+  grid-area: item5;
+}
+
+.grid-item.item6 {
+  grid-area: item6;
+}
+
+.grid-item.item7 {
+  grid-area: item7;
+}
+
+.grid-item.item8 {
+  grid-area: item8;
+}
+
+.grid-item.item9 {
+  grid-area: item2;
+}
+
+/* Stilizare tabel */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+thead {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-primary);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tfoot {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+table caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Stilizare buton Înapoi sus */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(
+    76,
+    175,
+    80,
+    0.7
+  ); /* Folosind o culoare semitransparentă */
+  border-top: 2px solid #2e7d32; /* Borduri în culori diferite */
+  border-bottom: 2px solid #2e7d32;
+  border-left: 2px solid #4caf50;
+  border-right: 2px solid #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  transition: transform 0.5s, opacity 0.3s, box-shadow 0.3s;
+}
+
+#back-to-top:hover {
+  opacity: 1;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(360deg);
+}
+
+#triangle {
+  filter: blur(2px);
+  transition: filter 0.3s;
+}
+
+#back-to-top:hover #triangle {
+  filter: blur(0);
+}
+
+/* Stilizarea unei formule scrise în MathML */
+math {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+mi,
+mn,
+mo {
+  font-style: italic;
+}
+
+msup > * {
+  color: var(--color-secondary);
+}
+
+/* Stilizare taburi iframe */
+.container-iframe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.taburi-iframe {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0; /* Ensure buttons touch the iframe border */
+}
+
+.taburi-iframe a {
+  flex: 1;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--color-primary);
+  border: 1px solid green;
+  border-top: none; /* Ensure buttons look like part of the iframe border */
+  border-radius: 0 0 5px 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+  font-size: 0.8rem;
+  max-width: 30%; /* Reduce button width */
+  margin: 0 5px; /* Add margin between buttons */
+}
+
+.taburi-iframe a:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+iframe {
+  border: 5px solid green;
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 5px 5px 0 0;
+}
+
+@media (max-width: 768px) {
+  .taburi-iframe {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .taburi-iframe a {
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+    border-radius: 5px;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      a {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0; /* Pentru a elimina orice indentare implicită */
+  margin: 0; /* Pentru a elimina orice margini implicite */
+}
+
+/* Hamburger menu */
+.hamburger {
+  z-index: 1000;
+  position: relative;
+  ul {
+    top: 100%;
+    left: 0;
+    display: flex;
+    width: 100%;
+    min-width: fit-content;
+    background: var(--color-secondary);
+    flex-direction: row;
+    li {
+      position: relative;
+      max-width: inherit;
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        color: white;
+        text-align: left;
+        text-decoration: none;
+        transition: background 0.3s, box-shadow 0.3s;
+
+        &:hover {
+          background: var(--color-primary);
+          box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+        }
+      }
+
+      ul {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: inherit;
+        background: var(--color-secondary);
+        transition: transform 0.3s ease-in-out;
+
+        li {
+          width: 100%;
+          position: relative;
+          a {
+            padding: 10px;
+            padding-left: 2rem;
+            width: 100%;
+            position: relative;
+            &::before {
+              content: "→";
+              position: absolute;
+              left: 10px;
+              top: 50%;
+              transform: translateY(-50%) translateX(-10px);
+              transition: transform 0.3s;
+            }
+          }
+
+          &:hover a::before {
+            transform: translateY(-50%) translateX(0);
+          }
+        }
+      }
+
+      &:hover > ul {
+        display: flex;
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  .hamburger-icon {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 25px;
+
+    .bar {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background-color: var(--color-primary);
+      transition: 0.3s;
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--color-secondary);
+    }
+
+    .hamburger-icon {
+      display: block;
+    }
+
+    &.active ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+/*Stilizare video*/
+video {
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
+  margin: auto;
+  display: block;
+}
+
+::cue {
+  background: rgba(255, 255, 255, 0.8); /* culoare c1 deschisă */
+  color: #333; /* culoare c2 închisă */
+}
+
+::cue(.top-right) {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Stilizare link-uri*/
+:root {
+  --link-color: #2e8b57; /* Example primary color from your scheme */
+  --link-visited-color: #a52a2a; /* Example visited link color from your scheme */
+  --external-link-color: #ffa500; /* Example external link color from your scheme */
+}
+
+main a {
+  color: var(--link-color);
+  text-decoration: none;
+  position: relative;
+  transition: background-size 0.3s ease;
+  border-style: 2px solid;
+}
+
+main a:visited {
+  color: var(--link-visited-color);
+  border-width: 2px;
+  border: 2px solid var(--link-visited-color);
+}
+
+main a[href^="http"]::before {
+  content: "⮳";
+  font-size: 1.5em; /* 50% larger than link font size */
+  color: var(--external-link-color);
+  margin-right: 0.5em;
+}
+
+main a[href^="http"]:hover::before {
+  color: var(--link-visited-color);
+}
+
+main a:hover {
+  background: radial-gradient(
+    circle,
+    var(--link-color) 0%,
+    var(--link-color) 40%,
+    transparent 80%,
+    transparent 100%
+  );
+  background-position: center;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+main a {
+  background: radial-gradient(
+    circle,
+    var(--link-color) 0%,
+    var(--link-color) 40%,
+    transparent 80%,
+    transparent 100%
+  );
+  background-position: center;
+  background-size: 0%;
+}
+
+main a:active {
+  border: 2px solid var(--link-color);
+}
+
+/* Galerie*/
+/* Effect de reflexie */
+.gallery-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gallery-title .original {
+  position: relative;
+  font-size: 2em;
+  color: var(--color-primary);
+  cursor: pointer;
+  display: inline-block;
+  transform: rotateY(50deg) rotateZ(-30deg);
+
+  /* transform: rotate3d(1, 1, 0, 45deg); */
+}
+
+.gallery-title .reflection {
+  position: relative;
+  font-size: 2em;
+  color: var(--color-primary);
+  cursor: pointer;
+  display: inline-block;
+  transform: rotateY(230deg) rotateZ(-30deg);
+}
+
+.gallery-title:hover .original,
+.gallery-title:hover .reflection {
+  color: var(--color-highlight);
+}
+
+/*Final effect de reflexie*/
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px; /* Ajustați înălțimea după cum este necesar */
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+}
+
+@media (max-width: 599px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 1.1s;
+}
+
+.gallery figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  transform: scale(1);
+  transition: transform 1.1s;
+}
+
+.gallery figure:hover img {
+  filter: contrast(200%);
+}
+
+.gallery figure:hover figcaption {
+  transform: scale(1.1);
+}
+
+/*Duotone effect*/
+
+.duotone-image {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background: url("/public/images/eco-large.jpg") no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  transition: filter 0.3s;
+}
+
+.duotone-image::before,
+.duotone-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  mix-blend-mode: screen;
+  transition: opacity 0.3s;
+}
+
+.duotone-image::before {
+  background-color: var(--duotone-color1);
+  opacity: 0.5;
+}
+
+.duotone-image::after {
+  background-color: var(--duotone-color2);
+  opacity: 0.5;
+}
+
+.duotone-image:hover {
+  filter: grayscale(100%);
+}
+
+.stylized-hr {
+  border: none;
+  height: 10px;
+  background: linear-gradient(
+    to left,
+    var(--gradient-color),
+    var(--gradient-color) 50%,
+    #ffffff 75%,
+    var(--gradient-color) 75%
+  );
+  margin: 20px 0;
+}
+
+.scrolling-text-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.scrolling-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-text 10s linear infinite;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Stilizare pentru produse */
+#product-container .product-item img {
+  width: 100%;
+  max-width: 200px; /* Setează lățimea maximă pentru imagini */
+  height: auto; /* Păstrează proporțiile imaginii */
+  object-fit: cover; /* Asigură că imaginea își păstrează proporțiile în container */
+  display: block;
+  margin: 0 auto; /* Centrează imaginea */
+}
+
+#product-container .product-info {
+  text-align: center; /* Centrează textul din product-info */
+}
+
+/* Setează lățimea pentru cardurile produselor */
+#product-container .product-item {
+  flex: 0 0 33.333%; /* Aproximativ 3 produse pe rând */
+  max-width: 33.333%; /* Asigură că nu depășește 33.333% din lățimea containerului */
+  box-sizing: border-box;
+  padding: 15px; /* Adaugă padding în interiorul fiecărui produs */
+  margin-bottom: 20px; /* Spațiere între produse */
+  border: 2px solid #ccc; /* Bordura produsului */
+  background-color: #f9f9f9; /* Fundalul produsului */
+  border-radius: 8px; /* Colțuri rotunjite pentru produse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră pentru un efect vizual plăcut */
+}
+
+/* Containerul pentru produsele afisate */
+#product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Spațiere egală între produsele afisate */
+}
+
+/*Banner*/
+#banner {
+  position: fixed;
+  bottom: -50px;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  transition: all 3s ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -50px;
+    background-color: #333;
+    color: #fff;
+  }
+  50% {
+    bottom: 20px;
+    background-color: #444;
+    color: #ddd;
+  }
+  100% {
+    bottom: 0;
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+#banner.show {
+  animation: slideUp 3s forwards;
+}
+
+#mesaj-cookies {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#ok_cookies {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}

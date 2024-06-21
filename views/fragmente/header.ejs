@@ -1,0 +1,31 @@
+<header>
+  <h1>EcoHaven</h1>
+  <button id="theme-toggle" class="btn btn-secondary">
+    <i id="theme-icon" class="bi bi-sun"></i>
+  </button>
+  <nav class="hamburger">
+    <ul>
+      <li>
+        <a href="/index">Acasă</a>
+        <ul>
+          <li><a href="/index#prezentare">Prezentare</a></li>
+          <li><a href="/index#produse">Produse</a></li>
+          <li><a href="/index#contact">Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="/galerie">Vezi galeria</a></li>
+      <li><a href="/produse">Produse</a></li>
+      <li><a href="/inregistrare">Inregistrare</a></li>
+    </ul>
+    <form id="loginForm" action="/login" method="post">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="parola" placeholder="Parolă" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="hamburger-icon">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+</header>

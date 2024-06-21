@@ -1,0 +1,61 @@
+{
+  "cale_galerie": "/public/images/galerie",
+  "imagini": [
+    {
+      "cale_fisier": "imagine1.jpg",
+      "titlu": "Imagine 1",
+      "alt": "text alternativ imagine 1",
+      "text_descriere": "Descriere imagine 1",
+      "luni": ["ianuarie", "februarie", "june"]
+    },
+    {
+      "cale_fisier": "imagine2.jpg",
+      "titlu": "Imagine 2",
+      "alt": "text alternativ imagine 2",
+      "text_descriere": "Descriere imagine 2",
+      "luni": ["martie", "aprilie", "june"]
+    },
+    {
+      "cale_fisier": "imagine3.jpg",
+      "titlu": "Imagine 3",
+      "alt": "text alternativ imagine 3",
+      "text_descriere": "Descriere imagine 3",
+      "luni": ["iunie", "iulie", "june"]
+    },
+    {
+      "cale_fisier": "imagine4.jpg",
+      "titlu": "Imagine 4",
+      "alt": "text alternativ imagine 4",
+      "text_descriere": "Descriere imagine 4",
+      "luni": ["septembrie", "octombrie", "june"]
+    },
+    {
+      "cale_fisier": "imagine5.jpg",
+      "titlu": "Imagine 4",
+      "alt": "text alternativ imagine 4",
+      "text_descriere": "Descriere imagine 4",
+      "luni": ["septembrie", "octombrie", "june"]
+    },
+    {
+      "cale_fisier": "imagine6.jpg",
+      "titlu": "Imagine 4",
+      "alt": "text alternativ imagine 4",
+      "text_descriere": "Descriere imagine 4",
+      "luni": ["septembrie", "octombrie", "june"]
+    },
+    {
+      "cale_fisier": "imagine7.jpg",
+      "titlu": "Imagine 4",
+      "alt": "text alternativ imagine 4",
+      "text_descriere": "Descriere imagine 4",
+      "luni": ["septembrie", "octombrie", "june"]
+    },
+    {
+      "cale_fisier": "imagine8.jpg",
+      "titlu": "Imagine 4",
+      "alt": "text alternativ imagine 4",
+      "text_descriere": "Descriere imagine 4",
+      "luni": ["septembrie", "octombrie", "june"]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <%- include('../fragmente/head') %>
+    <style>
+      .error-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        color: var(--color-primary);
+      }
+      .error-container img {
+        max-width: 50%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../fragmente/header') %>
+    <div class="error-container">
+      <h1><%= titlu %></h1>
+      <p><%= text %></p>
+      <img src="<%= imagine %>" alt="Error Image" />
+    </div>
+    <%- include('../fragmente/footer') %>
+  </body>
+  <script src="/js/script.js"></script>
+</html>

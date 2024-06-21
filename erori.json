@@ -1,0 +1,24 @@
+{
+  "cale_baza": "/public/images/erori/",
+  "eroare_default": {
+    "titlu": "Eroare necunoscută",
+    "text": "A apărut o eroare necunoscută.",
+    "imagine": "default.png"
+  },
+  "info_erori": [
+    {
+      "identificator": 404,
+      "status": true,
+      "titlu": "Pagina nu a fost găsită",
+      "text": "Ne pare rău, dar pagina pe care o căutați nu există.",
+      "imagine": "404.jpg"
+    },
+    {
+      "identificator": 403,
+      "status": true,
+      "titlu": "Acces interzis",
+      "text": "Nu aveți permisiunea de a accesa această pagină.",
+      "imagine": "403.jpg"
+    }
+  ]
+}

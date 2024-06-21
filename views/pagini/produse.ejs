@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../fragmente/head') %>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title>Produse</title>
+  </head>
+  <body>
+    <%- include('../fragmente/header') %>
+    <main>
+      <div class="container">
+        <h1>Produse</h1>
+        <div class="filters">
+          <div class="row">
+            <div class="col-md-4">
+              <label for="name-filter">Nume:</label>
+              <input
+                type="text"
+                id="name-filter"
+                class="form-control"
+                placeholder="Filtrează după nume"
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="description-filter">Descriere:</label>
+              <input
+                type="text"
+                id="description-filter"
+                class="form-control"
+                placeholder="Filtrează după descriere"
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="news-filter">Noutăți:</label>
+              <input
+                type="checkbox"
+                id="news-filter"
+                class="form-check-input"
+              />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-4">
+              <label for="price-range">Preț:</label>
+              <input
+                type="range"
+                id="price-range"
+                class="form-range"
+                min="0"
+                max="1000"
+              />
+              <span id="price-range-value">500</span>
+            </div>
+            <div class="col-md-4">
+              <label for="category-filter">Categorie:</label>
+              <select id="category-filter" class="form-select">
+                <option value="">Oricare</option>
+                <% categorii.forEach(function(categorie) { %>
+                <option value="<%= categorie %>"><%= categorie %></option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="textarea-filter">Descriere completă:</label>
+              <textarea id="textarea-filter" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <button id="filter-button" class="btn btn-primary">
+                Filtrează
+              </button>
+              <button id="sort-asc" class="btn btn-secondary">
+                Sortează ascendent
+              </button>
+              <button id="sort-desc" class="btn btn-secondary">
+                Sortează descendent
+              </button>
+              <button id="calc-button" class="btn btn-success">
+                Calculează
+              </button>
+              <button id="reset-button" class="btn btn-danger">
+                Resetează filtrele
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="categories mt-5">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="/produse">Toate</a></li>
+            <% categorii.forEach(function(categorie) { %>
+            <li class="list-inline-item">
+              <a href="/produse/<%= categorie %>"><%= categorie %></a>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+
+        <div id="product-container" class="row mt-5">
+          <% produse.forEach(function(produs) { %>
+          <div
+            class="col-md-4 product-item"
+            data-id="<%= produs.id %>"
+            data-is-new="<%= new Date(produs.data_introducere) > new Date('2023-01-01') %>"
+          >
+            <article id="artc-<%= produs.id %>">
+              <h2 class="product-name" data-id="<%= produs.id %>"><%= produs.nume %></h2>
+              <div class="product-info">
+                <img
+                  src="/public/<%= produs.imagine %>"
+                  alt="<%= produs.nume %>"
+                />
+                <ul>
+                  <li>Pret: <%= produs.pret %></li>
+                  <li>Specificație: <%= produs.specificatie_numerica %></li>
+                  <li>
+                    Data introducere:
+                    <time datetime="<%= produs.data_introducere %>"
+                      ><%= new
+                      Date(produs.data_introducere).toLocaleDateString('ro-RO',
+                      { weekday: 'long', year: 'numeric', month: 'long', day:
+                      'numeric' }) %></time
+                    >
+                  </li>
+                  <li>
+                    Caracteristica string: <%= produs.caracteristica_string %>
+                  </li>
+                  <li>
+                    Caracteristica multivaloare: <%=
+                    produs.caracteristica_multivaloare %>
+                  </li>
+                  <li>
+                    Caracteristica boolean: <%= produs.caracteristica_booleana ?
+                    'Da' : 'Nu' %>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-category">
+                Categorie: <%= produs.categorie_mare %>
+              </div>
+              <div class="accordion" id="accordion-<%= produs.id %>">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="heading-<%= produs.id %>">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-<%= produs.id %>"
+                      aria-expanded="false"
+                      aria-controls="collapse-<%= produs.id %>"
+                    >
+                      Detalii
+                    </button>
+                  </h2>
+                  <div
+                    id="collapse-<%= produs.id %>"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="heading-<%= produs.id %>"
+                    data-bs-parent="#accordion-<%= produs.id %>"
+                  >
+                    <div class="accordion-body">
+                      <p class="product-description"><%= produs.descriere %></p>
+                    </div>
+                  </div>
+              <p class="product-description"><%= produs.descriere %></p>
+            </article>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <%- include('../fragmente/footer') %>
+    <script src="/public/js/script.js"></script>
+  </body>
+</html>

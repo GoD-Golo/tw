@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('fragmente/head') %>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title>Administrare Utilizatori</title>
+  </head>
+  <body>
+    <%- include('fragmente/header') %>
+    <main>
+      <div class="container">
+        <h1>Administrare Utilizatori</h1>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Poza</th>
+              <th>Probleme vedere</th>
+              <th>Actiuni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% utilizatori.forEach(function(utilizator) { %>
+            <tr>
+              <td><%= utilizator.username %></td>
+              <td>
+                <% if (utilizator.fotografie) { %>
+                <img
+                  src="<%= utilizator.fotografie %>"
+                  alt="Poza utilizator"
+                  width="50"
+                />
+                <% } else { %>
+                <img
+                  src="/public/images/default-user.png"
+                  alt="Poza default"
+                  width="50"
+                />
+                <% } %>
+              </td>
+              <td><%= utilizator.problema_vedere ? 'Da' : 'Nu' %></td>
+              <td>
+                <form action="/sterge-poza" method="POST">
+                  <input type="hidden" name="id" value="<%= utilizator.id %>" />
+                  <button type="submit" class="btn btn-danger">
+                    Sterge Poza
+                  </button>
+                </form>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <%- include('fragmente/footer') %>
+    <script src="/public/js/script.js"></script>
+  </body>
+</html>

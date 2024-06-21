@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <%- include('../fragmente/head') %>
+    <title>Galerie - EcoHaven</title>
+  </head>
+  <body>
+    <%- include('../fragmente/header') %>
+    <main>
+      <div class="gallery-title">
+        <span class="original">Galerie</span>
+        <span class="reflection">Galerie</span>
+      </div>
+      <div class="gallery">
+        <% galerie.imagini.forEach(function(imagine, index) { %>
+        <figure>
+          <picture>
+            <source
+              srcset="<%= galerie.cale_galerie + '/' + imagine.cale_fisier %>"
+              media="(max-width: 600px)"
+            />
+            <source
+              srcset="<%= galerie.cale_galerie + '/' + imagine.cale_fisier %>"
+              media="(max-width: 1200px)"
+            />
+            <img
+              src="<%= galerie.cale_galerie + '/' + imagine.cale_fisier %>"
+              alt="<%= imagine.alt %>"
+              title="<%= imagine.text_descriere %>"
+            />
+          </picture>
+          <figcaption>
+            <%= String.fromCharCode(945 + index) %>. <%= imagine.titlu %>
+          </figcaption>
+        </figure>
+        <% }) %>
+      </div>
+      <hr class="stylized-hr" />
+
+      <div class="duotone-image"></div>
+
+      <div class="scrolling-text-container">
+        <div class="scrolling-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse iusto
+          cupiditate delectus, quia repudiandae, assumenda reprehenderit dolores
+          hic qui sed asperiores modi enim omnis ipsa ipsam recusandae eaque
+          tempore. Dolorum.
+        </div>
+      </div>
+    </main>
+    <%- include('../fragmente/footer') %>
+  </body>
+</html>

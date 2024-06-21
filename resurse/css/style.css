@@ -1,0 +1,403 @@
+/* Resetare CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Dimensiuni unități fixe */
+}
+
+body {
+  font-family: "Arial", sans-serif; /* Font general */
+  line-height: 1.6;
+  font-size: 1rem; /* Unități relative */
+}
+
+/* CSS Variables for Colors */
+:root {
+  --color-primary: #4caf50; /* Example primary color */
+  --color-secondary: #2e7d32; /* Example secondary color */
+}
+
+/* Layout Etapa 2 */
+body {
+  padding: 0 2rem; /* Spațierea în stânga și dreapta */
+}
+
+header,
+footer,
+main,
+aside {
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "item1 item1 item1 item1"
+    "item8 item8 item8 item8"
+    "item3 item2 item2 item4"
+    "item5 item6 item7 item7"
+    "footer footer footer footer";
+  gap: 1rem;
+}
+
+.grid-item {
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item.item1 {
+  grid-area: item1;
+}
+
+.grid-item.item2 {
+  grid-area: item2;
+}
+
+.grid-item.item3 {
+  grid-area: item3;
+}
+
+.grid-item.item4 {
+  grid-area: item4;
+}
+
+.grid-item.item5 {
+  grid-area: item5;
+}
+
+.grid-item.item6 {
+  grid-area: item6;
+}
+
+.grid-item.item7 {
+  grid-area: item7;
+}
+
+.grid-item.item8 {
+  grid-area: item8;
+}
+
+.grid-item.item9 {
+  grid-area: item2;
+}
+
+/* Stilizare tabel */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+thead {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-primary);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tfoot {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+table caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Stilizare buton Înapoi sus */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(
+    76,
+    175,
+    80,
+    0.7
+  ); /* Folosind o culoare semitransparentă */
+  border-top: 2px solid #2e7d32; /* Borduri în culori diferite */
+  border-bottom: 2px solid #2e7d32;
+  border-left: 2px solid #4caf50;
+  border-right: 2px solid #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  transition: transform 0.5s, opacity 0.3s, box-shadow 0.3s;
+}
+
+#back-to-top:hover {
+  opacity: 1;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(360deg);
+}
+
+#triangle {
+  filter: blur(2px);
+  transition: filter 0.3s;
+}
+
+#back-to-top:hover #triangle {
+  filter: blur(0);
+}
+
+/* Stilizarea unei formule scrise în MathML */
+math {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+mi,
+mn,
+mo {
+  font-style: italic;
+}
+
+msup > * {
+  color: var(--color-secondary);
+}
+
+/* Stilizare taburi iframe */
+.container-iframe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.taburi-iframe {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0; /* Ensure buttons touch the iframe border */
+}
+
+.taburi-iframe a {
+  flex: 1;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--color-primary);
+  border: 1px solid green;
+  border-top: none; /* Ensure buttons look like part of the iframe border */
+  border-radius: 0 0 5px 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+  font-size: 0.8rem;
+  max-width: 30%; /* Reduce button width */
+  margin: 0 5px; /* Add margin between buttons */
+}
+
+.taburi-iframe a:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+iframe {
+  border: 5px solid green;
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 5px 5px 0 0;
+}
+
+@media (max-width: 768px) {
+  .taburi-iframe {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .taburi-iframe a {
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+    border-radius: 5px;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      a {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0; /* Pentru a elimina orice indentare implicită */
+  margin: 0; /* Pentru a elimina orice margini implicite */
+}
+
+/* Hamburger menu */
+.hamburger {
+  z-index: 1000;
+  position: relative;
+  ul {
+    top: 100%;
+    left: 0;
+    display: flex;
+    background: var(--color-secondary);
+    flex-direction: column;
+    li {
+      position: relative;
+      width: 100%;
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.3s, box-shadow 0.3s;
+
+        &:hover {
+          background: var(--color-primary);
+          box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+        }
+      }
+
+      ul {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--color-secondary);
+        transition: transform 0.3s ease-in-out;
+
+        li {
+          width: 100%;
+          position: relative;
+          a {
+            padding: 10px;
+            padding-left: 2rem;
+            width: 100%;
+            position: relative;
+            &::before {
+              content: "→";
+              position: absolute;
+              left: 10px;
+              top: 50%;
+              transform: translateY(-50%) translateX(-10px);
+              transition: transform 0.3s;
+            }
+          }
+
+          &:hover a::before {
+            transform: translateY(-50%) translateX(0);
+          }
+        }
+      }
+
+      &:hover > ul {
+        display: flex;
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  .hamburger-icon {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 25px;
+
+    .bar {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background-color: var(--color-primary);
+      transition: 0.3s;
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--color-secondary);
+    }
+
+    .hamburger-icon {
+      display: block;
+    }
+
+    &.active ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

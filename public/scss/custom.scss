@@ -1,0 +1,165 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$theme-colors: (
+  "primary": #4caf50,
+  "secondary": #2e7d32,
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "light": #f8f9fa,
+  "dark": #343a40,
+);
+
+$font-family-base: "Arial, sans-serif";
+
+body {
+  font-family: $font-family-base;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-base;
+}
+
+.form-floating > .form-control:valid ~ label,
+.form-floating > .form-control.is-valid ~ label {
+  color: $success;
+}
+
+.form-floating > .form-control:invalid ~ label,
+.form-floating > .form-control.is-invalid ~ label {
+  color: $danger;
+}
+
+.custom-range::-webkit-slider-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: $primary;
+}
+
+.custom-range::-moz-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: $primary;
+}
+
+.custom-range::-ms-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: $primary;
+}
+
+// Variabile de customizare
+$border-radius: 0.25rem;
+$border-width: 1px;
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+// Customizarea butoanelor
+.btn-primary {
+  background-color: $primary-color;
+  border-radius: $border-radius;
+  border-width: $border-width;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  border-radius: $border-radius;
+  border-width: $border-width;
+}
+
+.form-control,
+.form-select,
+.form-check-input,
+.form-range {
+  border-radius: $border-radius;
+  border-width: $border-width;
+}
+
+// Customizarea inputurilor de tip range
+.form-range {
+  &::-webkit-slider-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $primary-color;
+  }
+  &::-moz-range-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $primary-color;
+  }
+}
+
+// Floating label pentru textarea
+.form-floating {
+  position: relative;
+}
+
+.form-floating label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  transition: all 0.2s;
+  opacity: 0.5;
+}
+
+.form-floating textarea:focus + label,
+.form-floating textarea:not(:placeholder-shown) + label {
+  top: -1.5rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  opacity: 1;
+}
+
+// Stilizare butoane checkbox/radio ca toggle buttons
+.btn-toggle {
+  .btn {
+    border-radius: $border-radius;
+    border-width: $border-width;
+  }
+
+  .btn-outline-primary {
+    color: $primary-color;
+    border-color: $primary-color;
+    &:hover,
+    &.active {
+      color: #fff;
+      background-color: $primary-color;
+    }
+  }
+
+  .btn-outline-secondary {
+    color: $secondary-color;
+    border-color: $secondary-color;
+    &:hover,
+    &.active {
+      color: #fff;
+      background-color: $secondary-color;
+    }
+  }
+}
+
+// Definește variabilele pentru temă
+$light-bg-color: #ffffff;
+$light-text-color: #000000;
+$dark-bg-color: #333333;
+$dark-text-color: #ffffff;
+
+body.light-mode {
+  background-color: $light-bg-color;
+  color: $light-text-color;
+}
+
+body.dark-mode {
+  background-color: $dark-bg-color;
+  color: $dark-text-color;
+}

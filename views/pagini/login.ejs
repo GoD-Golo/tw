@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('fragmente/head') %>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title>Inregistrare</title>
+  </head>
+  <body>
+    <%- include('fragmente/header') %>
+    <main>
+      <div class="container">
+        <h1>Inregistrare</h1>
+        <form action="/register" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="nume" class="form-label">Nume</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nume"
+              name="nume"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="prenume" class="form-label">Prenume</label>
+            <input
+              type="text"
+              class="form-control"
+              id="prenume"
+              name="prenume"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="parola" class="form-label">Parola</label>
+            <input
+              type="password"
+              class="form-control"
+              id="parola"
+              name="parola"
+              required
+            />
+            <small class="form-text text-muted"
+              >Parola trebuie să conțină minim o literă mare, o literă mică, 2
+              cifre și caracterul punct.</small
+            >
+          </div>
+          <div class="mb-3">
+            <label for="reparola" class="form-label"
+              >Reintroducere Parola</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="reparola"
+              name="reparola"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="data_nasterii" class="form-label">Data Nașterii</label>
+            <input
+              type="date"
+              class="form-control"
+              id="data_nasterii"
+              name="data_nasterii"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="culoare_chat" class="form-label">Culoare Chat</label>
+            <input
+              type="color"
+              class="form-control"
+              id="culoare_chat"
+              name="culoare_chat"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="problema_vedere" class="form-check-label"
+              >Problemă Vedere</label
+            >
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="problema_vedere"
+              name="problema_vedere"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="fotografie" class="form-label">Fotografie</label>
+            <input
+              type="file"
+              class="form-control"
+              id="fotografie"
+              name="fotografie"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Inregistrare</button>
+        </form>
+      </div>
+    </main>
+    <%- include('fragmente/footer') %>
+    <script src="/public/js/script.js"></script>
+  </body>
+</html>
